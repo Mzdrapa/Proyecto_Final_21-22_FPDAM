@@ -4,9 +4,11 @@
     android:layout_height="match_parent">
 
     <Switch
+        android:id="@+id/lightdark_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:checked="false"
         android:thumb="@drawable/switch_light_dark"/>
 </RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dice.DiceFragment">
+
+    <TableLayout
+        android:id="@+id/tblBotones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnD4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D4" />
+
+            <Button
+                android:id="@+id/btnD6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D6" />
+
+            <Button
+                android:id="@+id/btnD8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D8" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnD10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D10" />
+
+            <Button
+                android:id="@+id/btnD12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D12" />
+
+            <Button
+                android:id="@+id/btnD20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="50dip"
+                android:text="@string/dice_name_D20" />
+        </TableRow>
+
+    </TableLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tblBotones">
+
+        <ImageView
+            android:id="@+id/imgDice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/secondary"
+            android:src="@drawable/ic_d20"
+            android:contentDescription="@string/content_img_dice"/>
+
+        <TextView
+            android:id="@+id/txtNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="gggggggg"
+            android:textAlignment="textStart"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
