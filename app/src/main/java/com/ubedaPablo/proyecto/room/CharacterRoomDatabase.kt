@@ -12,8 +12,7 @@ public abstract class CharacterRoomDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDao
 
     companion object {
-        // Singleton prevents multiple instances of database opening at the
-        // same time.
+        // Singleton prevents multiple instances of database opening at the same time.
         @Volatile
         private var INSTANCE: CharacterRoomDatabase? = null
 
