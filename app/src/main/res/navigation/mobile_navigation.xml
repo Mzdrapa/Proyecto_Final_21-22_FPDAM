@@ -3,23 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_dice">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.proyecto.ui.dice.DiceFragment"
-        android:label="@string/menu_home"
+        android:id="@+id/nav_dice"
+        android:name="com.ubedaPablo.proyecto.ui.dice.DiceFragment"
+        android:label="@string/menu_dice"
         tools:layout="@layout/fragment_dice" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.proyecto.ui.characters.CharacterFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/nav_character"
+        android:name="com.ubedaPablo.proyecto.ui.characters.CharacterFragment"
+        android:label="@string/menu_character"
         tools:layout="@layout/fragment_character" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.proyecto.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_rules"
+        android:name="com.ubedaPablo.proyecto.ui.rules.RulesFragment"
+        android:label="@string/menu_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.ubedaPablo.proyecto.ui.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/addCharFragment"
+        android:name="com.ubedaPablo.proyecto.ui.characters.AddCharFragment"
+        android:label="@string/menu_add_character"
+        tools:layout="@layout/fragment_add_char" />
 </navigation>

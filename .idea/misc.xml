@@ -7,14 +7,24 @@
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/app_bar_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/content_main.xml" value="0.27807971014492755" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_add_char.xml" value="0.33" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_character.xml" value="0.31929347826086957" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_dice.xml" value="0.3813405797101449" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_gallery.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_home.xml" value="0.38697916666666665" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_main.xml" value="0.3233695652173913" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_rules.xml" value="0.18819655521783182" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/fragment_slideshow.xml" value="0.3813405797101449" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/item_character_list.xml" value="0.31521739130434784" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/item_rules_list.xml" value="0.18819655521783182" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/nav_header_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/layout/switch_item.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/menu/activity_main_drawer.xml" value="0.38697916666666665" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/menu/character_menu.xml" value="0.38697916666666665" />
         <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/menu/main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2515" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/xml/provider_paths.xml" value="0.11499493414387031" />
+        <entry key="..\:/Proyectos/Programacion/Android/Proyecto/app/src/main/res/xml/root_preferences.xml" value="0.38697916666666665" />
       </map>
     </option>
   </component>
