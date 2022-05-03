@@ -8,14 +8,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.ubedaPablo.proyecto.R
-import com.ubedaPablo.proyecto.room.CharacterDYD
+import com.ubedaPablo.proyecto.room.CharacterDnD
 
 class CharacterRecyclerAdapter : RecyclerView.Adapter<CharacterRecyclerAdapter.ViewHolder>() {
 
-    var characters: MutableList<CharacterDYD> = ArrayList()
+    var characters: MutableList<CharacterDnD> = ArrayList()
     lateinit var context: Context
 
-    fun RecyclerAdapter(characters: MutableList<CharacterDYD>, context: Context) {
+    fun RecyclerAdapter(characters: MutableList<CharacterDnD>, context: Context) {
         this.characters = characters
         this.context = context
     }
@@ -40,7 +40,7 @@ class CharacterRecyclerAdapter : RecyclerView.Adapter<CharacterRecyclerAdapter.V
         val born = view.findViewById(R.id.txtBorn) as TextView
         val desc = view.findViewById(R.id.txtDesc) as TextView
 
-        fun bind(character: CharacterDYD, context: Context) {
+        fun bind(character: CharacterDnD, context: Context) {
             charId.text = character.id.toString()
             name.text = character.name
             born.text = character.born

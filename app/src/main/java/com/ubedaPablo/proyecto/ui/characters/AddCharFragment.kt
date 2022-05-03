@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ubedaPablo.proyecto.databinding.FragmentAddCharBinding
-import com.ubedaPablo.proyecto.room.CharacterDYD
+import com.ubedaPablo.proyecto.room.CharacterDnD
 import com.ubedaPablo.proyecto.room.CharacterRoomDatabase
 
 
@@ -38,8 +38,8 @@ class AddCharFragment : Fragment(), View.OnClickListener {
         parentFragmentManager.popBackStack()
     }
 
-    fun generateCharacter(): CharacterDYD {
-        return CharacterDYD(
+    fun generateCharacter(): CharacterDnD {
+        return CharacterDnD(
             name = binding.editTextName.text.toString(),
             born = binding.editTextDate.text.toString(),
             desc = binding.editTextDesc.text.toString()
