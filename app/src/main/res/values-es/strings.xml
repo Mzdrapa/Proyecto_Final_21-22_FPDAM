@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string name="navigation_drawer_close">Cerrar navigation drawer</string>
+    <string name="action_settings">Preferencias</string>
+    <string name="action_contact">Contacto</string>
+    <string name="menu_dice">Dados</string>
+    <string name="menu_character">Personajes</string>
+    <string name="menu_rules">Reglas</string>
+    <string name="content_img_dice">Imagen de Dado</string>
+    <string name="messages_header">Apariencia</string>
+    <string name="txt_welcome">Esta aplicación ha sido desarrollada para el proyecto final de 2ºDAM 21–22</string>
+    <string name="prefLanguage">Idioma[PH]</string>
+    <string name="add_name">Nombre</string>
+    <string name="menu_add_character">Añadir personaje</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="add_char">Boton Añadir personaje</string>
+    <string name="btnAdd">Añadir</string>
+    <string name="txtDesc">Descripción del personaje</string>
+    <string name="txtName">Nombre</string>
+    <string name="txtBorn">Fecha de Nacimiento</string>
+    <string name="prefDarkMode">Modo Oscuro</string>
+</resources>

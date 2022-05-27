@@ -1,5 +1,6 @@
 package com.ubedaPablo.proyecto
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
@@ -15,12 +16,17 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.google.android.material.navigation.NavigationView
 import com.ubedaPablo.proyecto.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var preferences: SharedPreferences
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase!!, "es"))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +90,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     }
 
     private fun loadSettings() {
+        //Light/Dark Modes
         val mode = if (preferences.getBoolean(
                 "light_dark",
                 true
@@ -91,17 +98,13 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         ) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
         AppCompatDelegate.setDefaultNightMode(mode)
 
-//        val lang = preferences.getString("list_language", Locale.getDefault().language)
-//        val conf = Configuration(resources.configuration)
-//        val dm = resources.displayMetrics
-//        val locale = Locale(lang)
-//        conf.setLocale(locale)
-//        Locale.setDefault(locale)
-//        conf.setLayoutDirection(locale)
-//        resources.updateConfiguration(conf, dm)
-//        Log.i("Locale", Locale.getDefault().language)
+        //Locales
+        val localeBeforeChange = Locale.getDefault().language
+        val lang = preferences.getString("list_language", Locale.getDefault().language)
+        LocaleHelper.setLocale(baseContext, lang)
+        if (!Locale.getDefault().language.equals(localeBeforeChange)) {
+            recreate()
+        }
     }
-
-
 
 }
