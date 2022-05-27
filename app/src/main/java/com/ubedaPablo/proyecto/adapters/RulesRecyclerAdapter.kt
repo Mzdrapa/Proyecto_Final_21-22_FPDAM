@@ -52,7 +52,7 @@ class RulesRecyclerAdapter : RecyclerView.Adapter<RulesRecyclerAdapter.ViewHolde
         fun bind(fileString: String, context: Context) {
             title.text = fileString
             itemView.setOnClickListener {
-                //No necesito permisos porque son archivos que se crea la misma aplicacion y en el directorio de la aplicacion
+                //No necesito permisos porque son archivos que se crea la misma aplicación y en el directorio de la aplicación
                 copyAssets(context, fileString)
                 val file = File(context.getExternalFilesDir(null), fileString)
                 val intent = Intent(
@@ -122,7 +122,7 @@ class RulesRecyclerAdapter : RecyclerView.Adapter<RulesRecyclerAdapter.ViewHolde
                     outputStream?.close()
                 }
             } catch (e: IOException) {
-                Log.e("tag", "Failed to get asset file list.", e)
+                Log.e("tag", "Ha habido un fallo", e)
             }
 
         }
