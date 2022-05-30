@@ -58,7 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="350dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="15dp"
                 android:contentDescription="@string/txtDesc"
                 android:ems="10"

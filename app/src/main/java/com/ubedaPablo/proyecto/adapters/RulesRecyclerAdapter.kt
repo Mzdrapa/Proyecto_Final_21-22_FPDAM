@@ -1,10 +1,7 @@
 package com.ubedaPablo.proyecto.adapters
 
-import android.Manifest
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.content.res.AssetManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.ubedaPablo.proyecto.R
@@ -65,38 +60,6 @@ class RulesRecyclerAdapter : RecyclerView.Adapter<RulesRecyclerAdapter.ViewHolde
                 )
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 context.startActivity(intent)
-//                if (checkPermissions(context, activity)) {
-//                    val file = File(context.getExternalFilesDir(null), fileString)
-//                    val intent = Intent(
-//                        Intent.ACTION_VIEW,
-//                        FileProvider.getUriForFile(
-//                            context,
-//                            context.applicationContext.packageName + ".provider",
-//                            file
-//                        )
-//                    )
-//                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                    context.startActivity(intent)
-//                }
-            }
-        }
-
-        private fun checkPermissions(context: Context, activity: Activity): Boolean {
-            if (ContextCompat.checkSelfPermission(
-                    context,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                )
-                == PackageManager.PERMISSION_DENIED
-            ) {
-                ActivityCompat.requestPermissions(
-                    activity,
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    100
-                )
-                return false
-            } else {
-                copyAssets(context, "itemId")
-                return true
             }
         }
 
@@ -111,7 +74,6 @@ class RulesRecyclerAdapter : RecyclerView.Adapter<RulesRecyclerAdapter.ViewHolde
                     outputStream = FileOutputStream(outFile)
                     copyFile(inputStream, outputStream)
                 } catch (e: IOException) {
-                    Log.e("File", "Failed to copy asset file: $fileToCopy", e)
                     Toast.makeText(
                         context,
                         "Error, no se puede abrir el archivo",

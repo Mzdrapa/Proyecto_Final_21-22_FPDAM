@@ -59,7 +59,7 @@ class CharacterFragment : Fragment(), EditDeleteDialog.DialogListener,
             R.id.add_character -> {
                 val bundle = Bundle()
                 bundle.putBoolean("Edit", false)
-                navController.navigate(R.id.addCharFragment)
+                navController.navigate(R.id.addCharFragment, bundle)
                 true
             }
             else -> {

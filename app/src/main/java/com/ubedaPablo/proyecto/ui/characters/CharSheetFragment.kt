@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.ubedaPablo.proyecto.databinding.FragmentAddCharBinding
+import com.ubedaPablo.proyecto.databinding.FragmentCharSheetBinding
 import com.ubedaPablo.proyecto.room.CharacterDnD
 import com.ubedaPablo.proyecto.room.CharacterRoomDatabase
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
 
 class CharSheetFragment : Fragment(), View.OnClickListener {
 
-    private var _binding: FragmentAddCharBinding? = null
+    private var _binding: FragmentCharSheetBinding? = null
     private val binding get() = _binding!!
     private var edit = false
 
@@ -23,7 +23,7 @@ class CharSheetFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAddCharBinding.inflate(inflater, container, false)
+        _binding = FragmentCharSheetBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val bundle = requireArguments()

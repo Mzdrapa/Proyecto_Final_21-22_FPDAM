@@ -30,7 +30,7 @@
         android:id="@+id/addCharFragment"
         android:name="com.ubedaPablo.proyecto.ui.characters.CharSheetFragment"
         android:label="@string/menu_add_character"
-        tools:layout="@layout/fragment_add_char" />
+        tools:layout="@layout/fragment_char_sheet" />
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.ubedaPablo.proyecto.ui.InfoFragment"
