@@ -45,4 +45,5 @@
     <string name="dialogTitle">What do you want to do?</string>
     <string name="dialogEdit">Edit Character</string>
     <string name="dialogDelete">Delete Character</string>
+    <string name="navTitle" translatable="false">DnD</string>
 </resources>

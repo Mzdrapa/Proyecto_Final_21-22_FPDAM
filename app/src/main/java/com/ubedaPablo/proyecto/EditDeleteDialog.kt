@@ -19,13 +19,15 @@ class EditDeleteDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("Titulo")
-                .setItems(arrayOf("Hey", "Hoy"), DialogInterface.OnClickListener() { _, i ->
-                    when (i) {
-                        0 -> listener.onEditClick()
-                        1 -> listener.onDeleteClick()
-                    }
-                })
+            builder.setTitle(R.string.dialogTitle)
+                .setItems(
+                    arrayOf(getString(R.string.dialogEdit), getString(R.string.dialogDelete)),
+                    DialogInterface.OnClickListener() { _, i ->
+                        when (i) {
+                            0 -> listener.onEditClick()
+                            1 -> listener.onDeleteClick()
+                        }
+                    })
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }

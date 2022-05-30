@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_dice"
             android:icon="@drawable/ic_d20"
-            android:title="@string/menu_dice" />
+            android:title="@string/menu_dice"/>
         <item
             android:id="@+id/nav_character"
             android:icon="@drawable/ic_baseline_person_24"

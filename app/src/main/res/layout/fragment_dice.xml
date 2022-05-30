@@ -38,6 +38,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 android:minHeight="50dip"
                 android:text="@string/dice_name_D6"
                 android:textSize="18sp" />
@@ -48,6 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 android:minHeight="50dip"
                 android:text="@string/dice_name_D8"
                 android:textSize="18sp" />
@@ -63,6 +65,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 android:minHeight="50dip"
                 android:text="@string/dice_name_D10"
                 android:textSize="18sp" />
@@ -73,6 +76,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 android:minHeight="50dip"
                 android:text="@string/dice_name_D12"
                 android:textSize="18sp" />
@@ -83,6 +87,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:background="@drawable/custom_button"
                 android:minHeight="50dip"
                 android:text="@string/dice_name_D20"
                 android:textSize="18sp" />

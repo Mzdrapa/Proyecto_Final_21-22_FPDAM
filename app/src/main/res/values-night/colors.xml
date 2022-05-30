@@ -2,11 +2,14 @@
 <resources>
 
     <!--Dark Colors-->
-    <color name="primary">#003049</color>
+    <color name="primary">#5B5F97</color>
     <color name="primary_variant">#444545</color>
     <color name="on_primary">#E6FFFFFF</color>
 
     <color name="secondary">#E54B4B</color>
     <color name="secondary_variant">#444545</color>
     <color name="on_secondary">#E6FFFFFF</color>
+
+    <color name="nav_ext">#353535</color>
+    <color name="nav_int">#C6C6C6</color>
 </resources>
