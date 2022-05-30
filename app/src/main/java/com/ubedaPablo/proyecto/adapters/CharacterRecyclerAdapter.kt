@@ -21,7 +21,7 @@ class CharacterRecyclerAdapter : RecyclerView.Adapter<CharacterRecyclerAdapter.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = characters.get(position)
+        val item = characters[position]
         holder.bind(item, context)
     }
 

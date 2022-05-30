@@ -1,16 +1,6 @@
 
 q
 Aapp/src/main/java/com/ubedaPablo/proyecto/ui/dice/DiceFragment.kt,6\8\68a48004287531b65814af8aec25f943434d8961
-z
-Japp/src/main/java/com/ubedaPablo/proyecto/ui/characters/AddCharFragment.kt,1\1\115ed1e296a8de63721986f5dd37855a7ef5931d
-|
-Lapp/src/main/java/com/ubedaPablo/proyecto/ui/characters/CharacterFragment.kt,d\6\d67af719d916ce19c35477b1bc40ca43733e738e
-n
->app/src/main/java/com/ubedaPablo/proyecto/room/CharacterDao.kt,f\6\f6fcc1f4076a5475915685b60d03d618e1b40f71
-n
->app/src/main/java/com/ubedaPablo/proyecto/room/CharacterDnD.kt,1\6\16b1edb88a35061fe881cc272e375864b491412e
-w
-Gapp/src/main/java/com/ubedaPablo/proyecto/room/CharacterRoomDatabase.kt,6\c\6cde36df7387358916ce62beb5f51e8a7d747f91
 a
 1app/src/main/java/com/ubedaPablo/proyecto/Dice.kt,f\7\f7f92c678175ab9d34adbfe9cb222d4c22a74ee8
 P
@@ -21,8 +11,6 @@ l
 Kapp/src/androidTest/java/com/ubedaPablo/proyecto/ExampleInstrumentedTest.kt,a\6\a6c63662ab5d5f70eb332cb45621d46775c78205
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 X
@@ -33,8 +21,6 @@ X
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
@@ -48,9 +34,5 @@ s
 Capp/src/main/java/com/ubedaPablo/proyecto/ui/rules/RulesFragment.kt,5\d\5d9b9765702a34299e7e42b2778f3ab2499015f0
 p
 @app/src/main/java/com/ubedaPablo/proyecto/ui/SettingsFragment.kt,2\6\26fc64392d9e79fbbbd62094df5596c4aa25ff18
-~
-Napp/src/main/java/com/ubedaPablo/proyecto/adapters/CharacterRecyclerAdapter.kt,d\6\d667e5711f7b7dd7fd5d0206e5791b3b37ce66d1
 i
 9app/src/main/java/com/ubedaPablo/proyecto/LocaleHelper.kt,6\8\682311e43f156262fb61507eb20a17e2ae8fc934
-i
-9app/src/main/java/com/ubedaPablo/proyecto/MainActivity.kt,4\e\4ea7f08a95140a888f99866aa771a0feb9f2823e

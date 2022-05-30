@@ -5,25 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.ubedaPablo.proyecto.databinding.FragmentAddCharBinding
 import com.ubedaPablo.proyecto.room.CharacterDnD
 import com.ubedaPablo.proyecto.room.CharacterRoomDatabase
-
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class AddCharFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentAddCharBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAddCharBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -33,12 +30,14 @@ class AddCharFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
-        val dao = CharacterRoomDatabase.getDatabase(requireContext()).characterDao()
-        dao.insertAll(generateCharacter())
-        parentFragmentManager.popBackStack()
+        lifecycleScope.launch(Dispatchers.Main) {
+            val dao = CharacterRoomDatabase.getDatabase(requireContext()).characterDao()
+            dao.insertAll(generateCharacter())
+            parentFragmentManager.popBackStack()
+        }
     }
 
-    fun generateCharacter(): CharacterDnD {
+    private fun generateCharacter(): CharacterDnD {
         return CharacterDnD(
             name = binding.editTextName.text.toString(),
             born = binding.editTextDate.text.toString(),

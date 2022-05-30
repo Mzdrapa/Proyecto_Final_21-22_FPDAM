@@ -8,14 +8,14 @@ import androidx.room.Query
 @Dao
 interface CharacterDao {
     @Query("SELECT * FROM characters")
-    fun getAll(): List<CharacterDnD>
+    suspend fun getAll(): List<CharacterDnD>
 
     @Insert
-    fun insertAll(vararg characters: CharacterDnD)
+    suspend fun insertAll(vararg characters: CharacterDnD)
 
     @Delete
-    fun delete(character: CharacterDnD)
+    suspend fun delete(character: CharacterDnD)
 
     @Query("DELETE FROM characters")
-    fun deleteAll()
+    suspend fun deleteAll()
 }
