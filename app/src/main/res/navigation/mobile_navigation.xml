@@ -25,10 +25,15 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.ubedaPablo.proyecto.ui.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="@string/action_settings" />
     <fragment
         android:id="@+id/addCharFragment"
         android:name="com.ubedaPablo.proyecto.ui.characters.CharSheetFragment"
         android:label="@string/menu_add_character"
         tools:layout="@layout/fragment_add_char" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.ubedaPablo.proyecto.ui.InfoFragment"
+        android:label="@string/action_contact"
+        tools:layout="@layout/fragment_info" />
 </navigation>

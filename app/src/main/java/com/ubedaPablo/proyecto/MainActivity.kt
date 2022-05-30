@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             true
         }
         R.id.action_contact -> {
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.infoFragment)
             true
         }
         else -> {
