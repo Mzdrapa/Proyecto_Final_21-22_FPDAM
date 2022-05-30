@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.ubedaPablo.proyecto.EditDeleteDialog
+import com.ubedaPablo.proyecto.MainActivity
 import com.ubedaPablo.proyecto.R
 import com.ubedaPablo.proyecto.room.CharacterDnD
+import com.ubedaPablo.proyecto.ui.characters.CharacterFragment
 
 class CharacterRecyclerAdapter : RecyclerView.Adapter<CharacterRecyclerAdapter.ViewHolder>() {
 
     var characters: MutableList<CharacterDnD> = ArrayList()
-    lateinit var context: Context
+    lateinit var context: CharacterFragment
 
-    fun RecyclerAdapter(characters: MutableList<CharacterDnD>, context: Context) {
+    fun RecyclerAdapter(characters: MutableList<CharacterDnD>, context: CharacterFragment) {
         this.characters = characters
         this.context = context
     }
@@ -34,24 +37,46 @@ class CharacterRecyclerAdapter : RecyclerView.Adapter<CharacterRecyclerAdapter.V
         return characters.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnLongClickListener {
+        private lateinit var listener: CharacterAdapterListener
+
+        interface CharacterAdapterListener {
+            fun onLongClickCreateDialog(id: Int)
+        }
+
         val charId = view.findViewById(R.id.txtId) as TextView
         val name = view.findViewById(R.id.txtName) as TextView
         val born = view.findViewById(R.id.txtBorn) as TextView
         val desc = view.findViewById(R.id.txtDesc) as TextView
 
-        fun bind(character: CharacterDnD, context: Context) {
+        fun bind(character: CharacterDnD, context: CharacterFragment) {
             charId.text = character.id.toString()
             name.text = character.name
             born.text = character.born
             desc.text = character.desc
+
+            itemView.setOnLongClickListener(this)
             itemView.setOnClickListener(View.OnClickListener {
                 Toast.makeText(
-                    context,
+                    context.requireContext(),
                     character.name,
                     Toast.LENGTH_SHORT
                 ).show()
             })
+
+            try {
+                listener = context
+            } catch (e: ClassCastException) {
+                throw ClassCastException(
+                    ("$context must implement CharacterAdapterListener")
+                )
+            }
+        }
+
+        override fun onLongClick(p0: View?): Boolean {
+            listener.onLongClickCreateDialog(charId.text.toString().toInt())
+            return true
         }
     }
 }

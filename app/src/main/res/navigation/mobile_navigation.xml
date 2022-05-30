@@ -28,7 +28,7 @@
         android:label="SettingsFragment" />
     <fragment
         android:id="@+id/addCharFragment"
-        android:name="com.ubedaPablo.proyecto.ui.characters.AddCharFragment"
+        android:name="com.ubedaPablo.proyecto.ui.characters.CharSheetFragment"
         android:label="@string/menu_add_character"
         tools:layout="@layout/fragment_add_char" />
 </navigation>

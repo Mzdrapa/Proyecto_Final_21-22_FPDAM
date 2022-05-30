@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayoutAdd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.characters.AddCharFragment" >
+    tools:context=".ui.characters.CharSheetFragment" >
 
     <ScrollView
         android:layout_width="match_parent"

@@ -1,12 +1,12 @@
 package com.ubedaPablo.proyecto.ui.characters
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ubedaPablo.proyecto.EditDeleteDialog
 import com.ubedaPablo.proyecto.R
 import com.ubedaPablo.proyecto.adapters.CharacterRecyclerAdapter
 import com.ubedaPablo.proyecto.databinding.FragmentCharacterBinding
@@ -15,12 +15,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CharacterFragment : Fragment() {
+class CharacterFragment : Fragment(), EditDeleteDialog.DialogListener,
+    CharacterRecyclerAdapter.ViewHolder.CharacterAdapterListener {
 
     private var _binding: FragmentCharacterBinding? = null
     private val binding get() = _binding!!
 
     private val adapter = CharacterRecyclerAdapter()
+    private var idToModify: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,27 +41,24 @@ class CharacterFragment : Fragment() {
     }
 
     private fun loadRecyclerView() {
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
         val dao = CharacterRoomDatabase.getDatabase(requireContext()).characterDao()
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
 
-        Log.d("LOL", "adapter1")
         lifecycleScope.launch(Dispatchers.IO) {
             val characterList = dao.getAll()
-            adapter.RecyclerAdapter(characterList.toMutableList(), requireContext())
-            Log.d("LOL", "adapter2")
+            adapter.RecyclerAdapter(characterList.toMutableList(), this@CharacterFragment)
             withContext(Dispatchers.Main) {
                 binding.recyclerView.adapter = adapter
-
             }
         }
-
-        Log.d("LOL", "adapter3")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController()
         return when (item.itemId) {
             R.id.add_character -> {
+                val bundle = Bundle()
+                bundle.putBoolean("Edit", false)
                 navController.navigate(R.id.addCharFragment)
                 true
             }
@@ -77,5 +76,28 @@ class CharacterFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onLongClickCreateDialog(id: Int) {
+        idToModify = id
+        val dialogo = EditDeleteDialog()
+        dialogo.setListener(this)
+        dialogo.show(childFragmentManager, "Edit or Delete Dialog")
+    }
+
+    override fun onEditClick() {
+        val bundle = Bundle()
+        bundle.putBoolean("Edit", true)
+        bundle.putInt("Id", idToModify)
+        val navController = findNavController()
+        navController.navigate(R.id.addCharFragment, bundle)
+    }
+
+    override fun onDeleteClick() {
+        val dao = CharacterRoomDatabase.getDatabase(requireContext()).characterDao()
+        lifecycleScope.launch(Dispatchers.IO) {
+            dao.delete(dao.getOne(idToModify))
+            withContext(Dispatchers.Main) { loadRecyclerView() }
+        }
     }
 }
