@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.bundleOf
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -36,15 +37,10 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-//        binding.appBarMain.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_dice, R.id.nav_character, R.id.nav_rules
@@ -56,14 +52,19 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
         preferences.registerOnSharedPreferenceChangeListener(this)
 
+        if (preferences.getBoolean("FirstOpen", true)){
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.infoFragment, bundleOf(
+                Pair("FirstOpen", true)
+            ))
+            preferences.edit().putBoolean("FirstOpen", false).apply()
+        }
+
         loadSettings()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         menu.findItem(R.id.add_character).isVisible = false
-        //menu.findItem(R.id.app_bar_switch).actionView.findViewById<Switch>(R.id.lightdark_switch).setOnCheckedChangeListener(this)
         return true
     }
 
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             true
         }
         R.id.action_contact -> {
-            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.infoFragment)
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.infoFragment, bundleOf(Pair("FirstOpen", false)))
             true
         }
         else -> {
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         //Light/Dark Modes
         val mode = if (preferences.getBoolean(
                 "light_dark",
-                true
+                false
             )
         ) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
         AppCompatDelegate.setDefaultNightMode(mode)

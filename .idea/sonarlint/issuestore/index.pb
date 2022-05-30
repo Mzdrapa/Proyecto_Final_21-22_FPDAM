@@ -1,10 +1,4 @@
 
-q
-Aapp/src/main/java/com/ubedaPablo/proyecto/ui/dice/DiceFragment.kt,6\8\68a48004287531b65814af8aec25f943434d8961
-a
-1app/src/main/java/com/ubedaPablo/proyecto/Dice.kt,f\7\f7f92c678175ab9d34adbfe9cb222d4c22a74ee8
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
 <app/src/test/java/com/ubedaPablo/proyecto/ExampleUnitTest.kt,b\3\b34ef996bea6c330ebc16edd02f169c368f6c8be
 {
@@ -30,9 +24,3 @@ A
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 z
 Japp/src/main/java/com/ubedaPablo/proyecto/adapters/RulesRecyclerAdapter.kt,b\f\bfd84288b8ea897f12645746a5c4643bdfef26fb
-s
-Capp/src/main/java/com/ubedaPablo/proyecto/ui/rules/RulesFragment.kt,5\d\5d9b9765702a34299e7e42b2778f3ab2499015f0
-p
-@app/src/main/java/com/ubedaPablo/proyecto/ui/SettingsFragment.kt,2\6\26fc64392d9e79fbbbd62094df5596c4aa25ff18
-i
-9app/src/main/java/com/ubedaPablo/proyecto/LocaleHelper.kt,6\8\682311e43f156262fb61507eb20a17e2ae8fc934

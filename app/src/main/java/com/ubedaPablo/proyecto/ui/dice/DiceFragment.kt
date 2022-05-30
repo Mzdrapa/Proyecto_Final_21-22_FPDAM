@@ -11,7 +11,6 @@ import com.ubedaPablo.proyecto.databinding.FragmentDiceBinding
 class DiceFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentDiceBinding? = null
-
     private val binding get() = _binding!!
     private lateinit var dice: Dice
 

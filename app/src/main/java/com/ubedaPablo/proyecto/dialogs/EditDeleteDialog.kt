@@ -1,10 +1,11 @@
-package com.ubedaPablo.proyecto
+package com.ubedaPablo.proyecto.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
+import com.ubedaPablo.proyecto.R
 import com.ubedaPablo.proyecto.ui.characters.CharacterFragment
 
 class EditDeleteDialog : DialogFragment() {

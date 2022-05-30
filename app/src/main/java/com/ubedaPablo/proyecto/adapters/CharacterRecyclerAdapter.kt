@@ -1,14 +1,11 @@
 package com.ubedaPablo.proyecto.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.ubedaPablo.proyecto.EditDeleteDialog
-import com.ubedaPablo.proyecto.MainActivity
 import com.ubedaPablo.proyecto.R
 import com.ubedaPablo.proyecto.room.CharacterDnD
 import com.ubedaPablo.proyecto.ui.characters.CharacterFragment

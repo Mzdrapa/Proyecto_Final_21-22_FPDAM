@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ubedaPablo.proyecto.EditDeleteDialog
+import com.ubedaPablo.proyecto.dialogs.EditDeleteDialog
 import com.ubedaPablo.proyecto.R
 import com.ubedaPablo.proyecto.adapters.CharacterRecyclerAdapter
 import com.ubedaPablo.proyecto.databinding.FragmentCharacterBinding

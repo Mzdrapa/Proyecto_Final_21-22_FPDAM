@@ -1,19 +1,30 @@
 package com.ubedaPablo.proyecto.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.ubedaPablo.proyecto.R
+import com.ubedaPablo.proyecto.databinding.FragmentInfoBinding
 
 class InfoFragment : Fragment() {
+
+    private var _binding: FragmentInfoBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_info, container, false)
+    ): View {
+        _binding = FragmentInfoBinding.inflate(inflater, container, false)
+
+
+        val bundle = requireArguments()
+        if (bundle.getBoolean("FirstOpen")) {
+            binding.textView.text = getString(R.string.firstOpen)
+        }
+        return binding.root
     }
 
 }
